@@ -1,7 +1,35 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+
+    head
+        title=title
+
+        <!-- Latest compiled and minified CSS -->
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+
+        <!-- google fonts - Lato and raleway -->
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400i")
+
+        <!-- custom css goes here -->
+        link(rel="stylesheet", href="/stylesheets/style.css")
+        link(rel="stylesheet", href="/stylesheets/font-awesome.css")
+
+        <!-- Latest compiled and minified JavaScript -->
+        script(src="/js/jquery-3.1.0.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+
+        <!-- loading wavesurfer.js -->
+        script(src="/js/wavesurfer.min.js")
+
+    body
+        header
+            div.max1140
+                div.logo-wrap
+                    h1.logo Audio Sense
+
+        div#content.max1140
+            block content
+
+        footer
+            div.gohlogo.max1140
+                &copy; TheUsualSuspects. Made while singing and dancing in <img alt="" src="img/goh2016-logo.png" />
