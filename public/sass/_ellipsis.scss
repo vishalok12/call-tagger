@@ -1,0 +1,12 @@
+@mixin putellipsis {
+    //You have to use this as @extend class and can apply directly on any block level elemnt too when the max width is 100%.
+    //define display block or inline-block for this to work
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; // you can redefine it as per your requirement.
+}
+
+%putellipsis {
+  @include putellipsis;
+}

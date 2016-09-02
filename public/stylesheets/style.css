@@ -1,8 +1,217 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+/*** CSS FOR CALL TAGGER ***/
+/*** Author - Nimit Mangal ***/
+/*** Date - September 2 2016 - THE GAME OF HACKS 2016 ***/
+/*** Company - PROPTIGER.com and MAKAAN.com ***/
+/*** variable ***/
+/*** text colors ***/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif; }
 
-a {
-  color: #00B7FF;
-}
+.max1140 {
+  max-width: 1140px;
+  margin: 0 auto; }
+
+/* Button v2 with 2 border radius 25px and 6px  */
+.btnn {
+  display: inline-block;
+  padding: 6px 25px;
+  border: solid 1px transparent;
+  border-left: solid 6px transparent;
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 25px;
+  color: #e81c28;
+  font-size: 16px;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer; }
+  .btnn:hover {
+    text-decoration: none;
+    color: #e4101d; }
+  .btnn.disabled {
+    color: #999999 !important;
+    cursor: not-allowed;
+    pointer-events: none; }
+
+.btnn-p {
+  background-color: #e81c28;
+  color: #fff !important;
+  border: none;
+  border-left: solid 6px #fba510; }
+  .btnn-p:hover {
+    background-color: #e4101d;
+    border-left-color: #8f0f16; }
+  .btnn-p.disabled {
+    background-color: #f17980;
+    border-left-color: #d41621; }
+    .btnn-p.disabled:hover {
+      background-color: #f17980;
+      border-left-color: #d41621; }
+
+.btnn-s {
+  background-color: #fff;
+  color: #e81c28;
+  border-color: #e81c28;
+  border-left-color: #fba510; }
+  .btnn-s:hover {
+    background-color: #e4101d;
+    border-color: #e4101d;
+    border-left-color: #8f0f16;
+    color: #fff; }
+  .btnn-s.disabled {
+    background-color: #cccccc;
+    border-color: #ef616a;
+    border-left-color: #fdcb74;
+    color: #ef616a; }
+    .btnn-s.disabled:hover {
+      background-color: #cccccc;
+      border-color: #ef616a;
+      border-left-color: #fdcb74;
+      color: #ef616a; }
+
+header {
+  background-color: #fff;
+  height: 50px;
+  border-bottom: solid 1px #ccc; }
+
+.logo-wrap {
+  float: left;
+  width: 200px; }
+  .logo-wrap .logo {
+    padding: 10px;
+    font-size: 21px;
+    font-weight: bold;
+    color: #e81c28; }
+
+body {
+  position: relative;
+  background-color: #f3f3f3;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.2; }
+
+#content {
+  padding: 10px 10px 110px; }
+
+.select-wrap {
+  padding: 30px 0px 0;
+  text-align: center; }
+  .select-wrap .instruction-txt {
+    font-size: 16px; }
+  .select-wrap .dd-wrap {
+    position: relative;
+    margin: 10px auto;
+    height: 42px;
+    width: 260px;
+    text-align: left; }
+    .select-wrap .dd-wrap .selectbox {
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      max-width: 260px;
+      width: 260px;
+      height: 42px;
+      background-color: #fff;
+      border: solid 1px #ececec;
+      padding: 0px 15px;
+      font-size: 14px;
+      line-height: 42px;
+      cursor: pointer; }
+      .select-wrap .dd-wrap .selectbox .default-txt {
+        color: #ccc; }
+      .select-wrap .dd-wrap .selectbox i {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #ccc; }
+    .select-wrap .dd-wrap .dd {
+      display: none;
+      position: absolute;
+      top: 41px;
+      width: 260px;
+      max-height: 280px;
+      border: solid 1px #ececec; }
+      .select-wrap .dd-wrap .dd ul {
+        padding: 0;
+        margin: 0;
+        list-style: none; }
+        .select-wrap .dd-wrap .dd ul > li {
+          position: relative;
+          display: block;
+          padding: 8px 5px 8px 10px;
+          background-color: #fff;
+          border-bottom: solid 1px #f6f6f6;
+          color: #999;
+          font-size: 12px;
+          text-decoration: none;
+          cursor: pointer; }
+          .select-wrap .dd-wrap .dd ul > li i {
+            position: absolute;
+            top: 10px;
+            right: 8px;
+            color: green; }
+          .select-wrap .dd-wrap .dd ul > li:hover {
+            background-color: #e81c28;
+            color: #fff; }
+            .select-wrap .dd-wrap .dd ul > li:hover i {
+              color: #fff; }
+    .select-wrap .dd-wrap:hover .dd {
+      display: block; }
+
+.afilelist-wrap .afile-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .afilelist-wrap .afile-list > li {
+    display: block; }
+  .afilelist-wrap .afile-list .sample-name {
+    padding: 10px 0;
+    font-size: 14px; }
+.afilelist-wrap .tag-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .afilelist-wrap .tag-list > li {
+    display: inline-block;
+    margin-right: 10px; }
+  .afilelist-wrap .tag-list .tag {
+    position: relative;
+    padding: 15px 10px 10px;
+    border-radius: 15px;
+    border: solid 1px #e81c28;
+    text-align: center;
+    color: #e81c28;
+    font-size: 14px;
+    opacity: 0.3; }
+    .afilelist-wrap .tag-list .tag i.fa {
+      display: block;
+      font-size: 24px;
+      padding-bottom: 10px; }
+    .afilelist-wrap .tag-list .tag:after {
+      position: absolute;
+      top: -5px;
+      right: 2px;
+      content: ''; }
+    .afilelist-wrap .tag-list .tag.active {
+      opacity: 1; }
+
+.btn-wrap {
+  padding: 20px 10px;
+  text-align: center; }
+
+footer {
+  height: 110px;
+  padding: 5px 10px 15px;
+  background-color: #000;
+  color: #fff;
+  text-align: center; }
+
+.fa-heart {
+  color: #E91E63; }
+
+/*# sourceMappingURL=style.css.map */

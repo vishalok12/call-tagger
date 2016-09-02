@@ -1,0 +1,319 @@
+/*** CSS FOR CALL TAGGER ***/
+/*** Author - Nimit Mangal ***/
+/*** Date - September 2 2016 - THE GAME OF HACKS 2016 ***/
+/*** Company - PROPTIGER.com and MAKAAN.com ***/
+
+@import "ellipsis";
+
+/*** variable ***/
+$link-color: #e81c28;
+$link-color2: #fba510;
+$dark-link-color: #e4101d;
+$dark-link-color2: #8f0f16;
+
+/*** text colors ***/
+$dark-color: #1c1c1c;
+$notdark-color: #555;
+$light-color: #666;
+$lighter-color: #999999;
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.max1140 {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/* Button v2 with 2 border radius 25px and 6px  */
+
+.btnn {
+    display: inline-block;
+    padding: 6px 25px;
+    border: solid 1px transparent;
+    border-left: solid 6px transparent;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 25px;
+    color: $link-color;
+    font-size: 16px;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+        color: $dark-link-color;
+    }
+
+    &.disabled {
+        color: $lighter-color!important;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.btnn-p {
+    background-color: $link-color;
+    color: #fff!important;
+    border: none;
+    border-left: solid 6px $link-color2;
+
+    &:hover {
+        background-color: $dark-link-color;
+        border-left-color: $dark-link-color2;
+    }
+
+    &.disabled {
+        background-color: lighten($link-color, 20%);
+        border-left-color: lighten($dark-link-color2, 15%);
+
+        &:hover {
+            background-color: lighten($link-color, 20%);
+            border-left-color: lighten($dark-link-color2, 15%);
+        }
+    }
+}
+
+.btnn-s {
+    background-color: #fff;
+    color: $link-color;
+    border-color: $link-color;
+    border-left-color: $link-color2;
+
+    &:hover {
+        background-color: $dark-link-color;
+        border-color: $dark-link-color;
+        border-left-color: $dark-link-color2;
+        color: #fff;
+    }
+
+    &.disabled {
+        background-color: darken(#fff, 20%);
+        border-color: lighten($link-color, 15%);
+        border-left-color: lighten($link-color2, 20%);
+        color: lighten($link-color, 15%);
+
+        &:hover {
+            background-color: darken(#fff, 20%);
+            border-color: lighten($link-color, 15%);
+            border-left-color: lighten($link-color2, 20%);
+            color: lighten($link-color, 15%);
+        }
+    }
+}
+
+header {
+    background-color: #fff;
+    height: 50px;
+    border-bottom: solid 1px #ccc;
+}
+
+.logo-wrap {
+    float: left;
+    width: 200px;
+
+    .logo {
+        padding: 10px;
+        font-size: 21px;
+        font-weight: bold;
+        color: $link-color;
+    }
+}
+
+body {
+    position: relative;
+    background-color: #f3f3f3;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+#content {
+    padding: 10px 10px 110px;
+}
+
+.select-wrap {
+    padding: 30px 0px 0;
+    text-align: center;
+
+    .instruction-txt {
+        font-size: 16px;
+    }
+
+    .dd-wrap {
+
+        $ddwidth: 260px;
+
+        position: relative;
+        margin: 10px auto;
+        height: 42px;
+        width: $ddwidth;
+        text-align: left;
+
+        .selectbox {
+            position: relative;
+            @include putellipsis;
+            max-width: $ddwidth;
+            width: $ddwidth;
+            height: 42px;
+            background-color: #fff;
+            border: solid 1px #ececec;
+            padding: 0px 15px;
+            font-size: 14px;
+            line-height: 42px;
+            cursor: pointer;
+
+            .default-txt {
+                color: #ccc;
+            }
+
+            i {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #ccc;
+            }
+        }
+
+        .dd {
+            display: none;
+            position: absolute;
+            top: 41px;
+            width: $ddwidth;
+            max-height: 280px;
+            border: solid 1px #ececec;
+
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                > li {
+                    position: relative;
+                    display: block;
+                    padding: 8px 5px 8px 10px;
+                    background-color: #fff;
+                    border-bottom: solid 1px #f6f6f6;
+                    color: #999;
+                    font-size: 12px;
+                    text-decoration: none;
+                    cursor: pointer;
+
+                    i {
+                        position: absolute;
+                        top: 10px;
+                        right: 8px;
+                        color: green;
+                    }
+
+                    &:hover {
+                        background-color: $link-color;
+                        color: #fff;
+
+                        i {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .dd {
+                display: block;
+            }
+        }
+
+    }
+}
+
+.afilelist-wrap {
+
+    .afile-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            display: block;
+        }
+
+        .sample-name {
+            padding: 10px 0;
+            font-size: 14px;
+        }
+    }
+
+    .tag-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .tag {
+            position: relative;
+            padding: 15px 10px 10px;
+            border-radius: 15px;
+            border: solid 1px $link-color;
+            text-align: center;
+            color: $link-color;
+            font-size: 14px;
+            opacity: 0.3;
+
+            i.fa {
+                display: block;
+                font-size: 24px;
+                padding-bottom: 10px;
+            }
+
+            &:after {
+                position: absolute;
+                top: -5px;
+                right: 2px;
+                content: '';
+            }
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn-wrap {
+    padding: 20px 10px;
+    text-align: center;
+}
+
+footer {
+    height: 110px;
+    padding: 5px 10px 15px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.gohlogo {
+
+}
+
+.fa-heart {
+    color: #E91E63;
+}
+
+
+
+
+
+
+

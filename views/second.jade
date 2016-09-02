@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    div.select-wrap
+        h5.instruction-txt Select the file you want to tag
+        div.dd-wrap
+
+            div.selectbox
+                span.default-txt Select file
+                span.selected-txt.hide sample file 1
+                i.fa.fa-chevron-down
+
+            div.dd
+                ul
+                    li#file1.clearfix
+                        span.file-name sample file 1
+                        span.process(title="start processing")
+                            i.fa.fa-play
+
+    div
+        div#waveform 
+
+    div.afilelist-wrap
+        ul.afile-list
+            li
+                h4.sample-name sample 1 goes here
+                ul.tag-list
+                    li.tag
+                        i.fa.fa-object-group
+                        | &nbsp;Unit Size
+                    li.tag
+                        i.fa.fa-money
+                        | &nbsp;Budget
+                    li.tag
+                        i.fa.fa-bank
+                        | &nbsp;Home Loan
+                    li.tag
+                        i.fa.fa-map-o
+                        | &nbsp;Location
+                    li.tag
+                        i.fa.fa-tv
+                        | &nbsp;Furnishing
+                    li.tag.active
+                        i.fa.fa-key
+                        | &nbsp;Possession
+                    li.tag
+                        i.fa.fa-exchange
+                        | &nbsp;No. exchange
+                    li.tag
+                        i.fa.fa-hand-o-right
+                        | &nbsp;Sale Type
+                    li.tag
+                        i.fa.fa-phone
+                        | &nbsp;Call back
+                    li.tag
+                        i.fa.fa-times
+                        | &nbsp;Property not available
+
+
+        script(type="text/javascript", src="/js/second.js")
+
+
+
+
