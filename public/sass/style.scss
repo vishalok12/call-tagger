@@ -345,23 +345,23 @@ header {
         .tag {
             position: relative;
             padding: 15px 10px 10px;
-            border-radius: 15px;
-            border: solid 1px $link-color;
+            border-radius: 10px;
+            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
             text-align: center;
-            color: $link-color;
+            color: $lighter-color;
             font-size: 14px;
-            opacity: 0.3;
 
-            i.fa {
+            i {
                 display: block;
-                font-size: 24px;
+                width: auto;
+                height: 40px;
                 padding-bottom: 10px;
             }
 
             &:after {
                 position: absolute;
-                top: -5px;
-                right: 2px;
+                top: -15px;
+                right: -15px;
                 content: '';
             }
 
