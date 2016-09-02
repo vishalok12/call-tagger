@@ -4,7 +4,6 @@ block content
     div.select-wrap
         h5.instruction-txt Select the file you want to tag
         div.dd-wrap
-
             div.selectbox
                 span.default-txt Select file
                 span.selected-txt.hide sample file 1
@@ -14,6 +13,18 @@ block content
                 ul
                     li#file1.clearfix
                         span.file-name sample file 1
+                        span.process(title="start processing")
+                            i.fa.fa-play
+                    li#file2.clearfix
+                        span.file-name sample file 2
+                        span.process(title="start processing")
+                            i.fa.fa-play
+                    li#file3.clearfix
+                        span.file-name sample file 3
+                        span.process(title="start processing")
+                            i.fa.fa-play
+                    li#file4.clearfix
+                        span.file-name sample file 4
                         span.process(title="start processing")
                             i.fa.fa-play
 
@@ -41,6 +52,39 @@ block content
                         i.fa.fa-tv
                         | &nbsp;Furnishing
                     li.tag.active
+                        i.fa.fa-key
+                        | &nbsp;Possession
+                    li.tag
+                        i.fa.fa-exchange
+                        | &nbsp;No. exchange
+                    li.tag
+                        i.fa.fa-hand-o-right
+                        | &nbsp;Sale Type
+                    li.tag
+                        i.fa.fa-phone
+                        | &nbsp;Call back
+                    li.tag
+                        i.fa.fa-times
+                        | &nbsp;Property not available
+            li
+                h4.sample-name sample 2 goes here
+                ul.tag-list
+                    li.tag
+                        i.fa.fa-object-group
+                        | &nbsp;Unit Size
+                    li.tag.active
+                        i.fa.fa-money
+                        | &nbsp;Budget
+                    li.tag
+                        i.fa.fa-bank
+                        | &nbsp;Home Loan
+                    li.tag
+                        i.fa.fa-map-o
+                        | &nbsp;Location
+                    li.tag
+                        i.fa.fa-tv
+                        | &nbsp;Furnishing
+                    li.tag
                         i.fa.fa-key
                         | &nbsp;Possession
                     li.tag
