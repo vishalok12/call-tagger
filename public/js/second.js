@@ -28,16 +28,6 @@
             $(".dd-wrap").removeClass('active');
 
             wavesurfer.load('/' + file);
-
-            let postData =  {
-               "fileName": '/input/' + file
-            };
-
-            $.post('/fileTag', postData).then(function(output) {
-                console.log(output);
-            }, function(e) {
-                console.log(e);
-            })
         }
 
         wavesurfer.on('ready', function () {
@@ -52,6 +42,20 @@
             let sound = $(e.target).data('value');
 
             genwave(sound);
+
+            $('.sample-name').text(sound + ' keywords:')
+            $('.afile-list > li').addClass('hide');
+
+            let postData =  {
+               "fileName": '/input/' + sound
+            };
+
+            $.post('/fileTag', postData).then(function(output) {
+                // show active tags
+                showTags(output.tags);
+            }, function(e) {
+                console.log(e);
+            });
         });
     });
 
@@ -68,5 +72,15 @@
         });
 
         $('#sound-list').append($lists);
+    }
+
+    function showTags(tags) {
+        $('.tag').removeClass('active');
+
+        tags.map(tag => {
+            $('.tag[data-value="' + tag.category + '"]').addClass('active');
+        });
+
+        $('.afile-list > li').removeClass('hide');
     }
 })();
