@@ -27,6 +27,7 @@ body {
     font-family: $bodyfont;
     font-size: 14px;
     line-height: 1.2;
+    z-index: 0;
 }
 
 // H tags basics
@@ -124,26 +125,88 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
-header {
-    background-color: #fff;
-    height: 50px;
-    border-bottom: solid 1px #ccc;
-}
+//big btn
+.bigbtn {
+    padding: 20px;
+    background-color: #90268f;
+    border-top: solid 5px transparent;
+    border-bottom: solid 5px #5f185e;
+    border-radius: 15px;
+    color: #fff;
+    font-family: $heading;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 
-.logo-wrap {
-    float: left;
-    width: 200px;
-
-    .logo {
-        padding: 10px;
-        font-size: 21px;
-        font-weight: bold;
-        color: $link-color;
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        border-bottom-color: transparent;
+        border-top-color: #5f185e;
     }
 }
 
+header {
+    background-color: #fff;
+    height: 140px;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.logo-wrap {
+    width: 509px;
+    margin: 0 auto;
+
+    .logo {
+        display: block;
+        width: 100%;
+        height: 140px;
+        background-image: url('/img/logo.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        font-size: 21px;
+        font-weight: bold;
+        color: $link-color;
+        text-indent: -999999px;
+    }
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    min-height: 700px;
+    background-color: #f3f3f3;
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
 #content {
-    padding: 10px 10px 110px;
+    position: relative;
+    min-height: 700px;
+    padding: 10px 10px 0px;
+    z-index: 2;
+}
+
+.feature-list {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.semifooter {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/bg-footer.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
 }
 
 .select-wrap {
@@ -197,7 +260,7 @@ header {
             width: $ddwidth;
             max-height: 280px;
             border: solid 1px #ececec;
-            z-index: 2;
+            z-index: 3;
 
             ul {
                 padding: 0;
@@ -252,7 +315,7 @@ header {
 }
 
 .afilelist-wrap {
-
+    padding: 0 0 100px 0;
     .afile-list {
         margin: 0;
         padding: 0;
@@ -310,15 +373,15 @@ header {
 }
 
 .btn-wrap {
-    padding: 20px 10px;
+    padding: 20px 10px 100px;
     text-align: center;
 }
 
 footer {
     height: 110px;
     padding: 5px 10px 15px;
-    background-color: #000;
-    color: #fff;
+    background-color: #ececec;
+    color: #999;
     text-align: center;
 }
 
