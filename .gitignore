@@ -3,3 +3,4 @@ node_modules/
 cachedResponses.json
 .DS_Store
 splitOut/*
+npm_debug.log
