@@ -20,6 +20,8 @@ $notdark-color: #555;
 $light-color: #666;
 $lighter-color: #999999;
 
+$icon-color: rgb(27, 210, 152);
+
 body {
     position: relative;
     background-color: #f3f3f3;
@@ -214,7 +216,7 @@ header {
     text-align: center;
 
     .instruction-txt {
-        font-size: 21px;
+        font-size: 28px;
     }
 
     .dd-wrap {
@@ -322,7 +324,7 @@ header {
         list-style: none;
 
         > li {
-            margin: 30px 0 0 0;
+            margin: 50px 0 0 0;
             display: block;
         }
 
@@ -339,12 +341,19 @@ header {
 
         > li {
             display: inline-block;
-            margin-right: 10px;
+            margin: 0 30px 30px 0;
+
+            &:last-child {
+                margin-right: 0px;
+            }
         }
 
         .tag {
             position: relative;
+            //width: 193px;
+            height: 120px;
             padding: 15px 10px 10px;
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
             text-align: center;
@@ -354,19 +363,220 @@ header {
             i {
                 display: block;
                 width: auto;
-                height: 40px;
-                padding-bottom: 10px;
+                height: 50px;
+                margin-bottom: 10px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+
+            .txt {
+                line-height: 1.25;
             }
 
             &:after {
+                display: none;
                 position: absolute;
                 top: -15px;
                 right: -15px;
                 content: '';
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-image: url(/img/tags/tick.png);
+                background-color: $icon-color;
+                background-repeat: no-repeat;
+                background-size: 50%;
+                background-position: center;
+            }
+
+
+            &.unit-size {
+                i {
+                    background-image: url(/img/tags/unit-size.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/unit-size-active.png);
+                    }
+                }
+            }
+
+            &.budget {
+                i {
+                    background-image: url(/img/tags/budget.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/budget-active.png);
+                    }
+                }
+            }
+
+            &.location {
+                i {
+                    background-image: url(/img/tags/location.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/location-active.png);
+                    }
+                }
+            }
+
+            &.furnishing {
+                i {
+                    background-image: url(/img/tags/furnishing.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/furnishing-active.png);
+                    }
+                }
+            }
+
+            &.possession {
+                i {
+                    background-image: url(/img/tags/possession.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/possession-active.png);
+                    }
+                }
+            }
+
+            &.sale-type {
+                i {
+                    background-image: url(/img/tags/sale-type.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/sale-type-active.png);
+                    }
+                }
+            }
+
+            &.parking {
+                i {
+                    background-image: url(/img/tags/parking.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/parking-active.png);
+                    }
+                }
+            }
+
+            &.home-loan {
+                i {
+                    background-image: url(/img/tags/bank-loan.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/bank-loan-active.png);
+                    }
+                }
+            }
+
+            &.site-visit {
+                i {
+                    background-image: url(/img/tags/site-visit.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/site-visit-active.png);
+                    }
+                }
+            }
+
+            &.number-change {
+                i {
+                    background-image: url(/img/tags/number-exchange.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/number-exchange-active.png);
+                    }
+                }
+            }
+
+            &.call-back {
+                i {
+                    background-image: url(/img/tags/call-back.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/call-back-active.png);
+                    }
+                }
+            }
+
+            &.commission {
+                i {
+                    background-image: url(/img/tags/commission.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/commission-active.png);
+                    }
+                }
+            }
+
+            &.not-available {
+                i {
+                    background-image: url(/img/tags/not-available.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/not-available-active.png);
+                    }
+                }
+            }
+
+            &.reference {
+                i {
+                    background-image: url(/img/tags/reference.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/reference-active.png);
+                    }
+                }
+            }
+
+            &.token {
+                i {
+                    background-image: url(/img/tags/token.png);
+                }
+
+                &.active {
+                    i {
+                        background-image: url(/img/tags/token-active.png);
+                    }
+                }
             }
 
             &.active {
-                opacity: 1;
+                color: $icon-color;
+
+                &:after {
+                    display: block;
+                }
             }
         }
     }
