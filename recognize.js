@@ -19,7 +19,6 @@ var google = require('googleapis');
 var async = require('async');
 var fs = require('fs');
 var categoryMap = require('./categoryMap').categoryMap;
-console.log(categoryMap, "categoryMap")
 
 // Get a reference to the speech service
 var speech = google.speech('v1beta1').speech;
