@@ -4,3 +4,4 @@ cachedResponses.json
 .DS_Store
 splitOut/*
 npm_debug.log
+out/
