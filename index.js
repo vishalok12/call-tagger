@@ -8,39 +8,55 @@ const flacConverter = require('./flacConverter');
 const splitAudio = require('./splitAudio');
 const async = require('async');
 const upload = require('./upload');
+const recognize = require('./recognize');
 
 const BUCKET = process.env.BUCKET;
 
-let inputFilePath = path.join(__dirname, '349633.mp3');
+module.exports = (config, callback) => {
+	console.log(config, "inputFilePath")
+	let inputFilePath = path.join(__dirname, config.fileName);
+	
+	flacConverter.convertToFlac({inputFilePath}, (error, outFilePath) => {
+		console.log('flacConverter output', outFilePath);
+		if (error) {
+			console.log(error);
+			process.exit(1);
+		}
 
-flacConverter.convertToFlac({inputFilePath}, (error, outFilePath) => {
-	console.log('flacConverter output', outFilePath);
-	if (error) {
-		console.log(error);
-		process.exit(1);
-	}
+		splitAudio.split({inputFilePath: outFilePath}, (error, splitFilesPath) => {
+			if (error) {
+				console.log(error);
 
-	console.log(outFilePath);
+				return process.exit(1);
+			}
 
-	splitAudio.split({inputFilePath: outFilePath}, (error, splitFilesPath) => {
-		// upload each flac audios
+			// upload each flac audios
+			let splitFilesUploadFnMap = splitFilesPath.map(filePath => {
+				return cb => {
+					upload({
+				  		bucket: BUCKET,
+				  		srcFile: filePath
+					}, (err, file) => {
+						if (err) {
+							return cb(err);
+						}
+						let fileName = filePath.slice(filePath.lastIndexOf('/') + 1);
+						cb(null, `gs://${BUCKET}/${fileName}`);
+					});
+				};
+			});
 
-		let splitFilesUploadFnMap = splitFilesPath.map(filePath => {
-			return cb => {
-				upload({
-			  		bucket: BUCKET,
-			  		srcFile: filePath
-				}, (err, file) => {
-					if (err) {
-						return cb(err);
-					}
-					cb(null, `gs://${BUCKET}/${filePath}`);
-				});
-			};
-		});
+			async.parallel(splitFilesUploadFnMap, (err, results) => {
+				if (err) {
+					console.log(err);
 
-		async.parallel(splitFilesUploadFnMap, (err, results) => {
-			console.log(results);
+					process.exit(1);
+				}
+				recognize.flacArrayToText(results, callback)
+				// console.log(transcript, 'transcript')
+				// callback(transcript)
+			});
 		});
 	});
-});
+}
+

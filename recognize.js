@@ -79,8 +79,8 @@ function prepareRequest(inputFile, callback) {
     // [END construct_request]
 
 function main(inputFileArray, callback) {
-    var inputFileArray = ['gs://humanparse/humanparse_recording_1002.flac','gs://humanparse/humanparse_recording_1003.flac','gs://humanparse/humanparse_recording_1004.flac']
-    console.log(inputFile, "inputFileArray")
+    //var inputFileArray = ['gs://humanparse/humanparse_recording_1002.flac','gs://humanparse/humanparse_recording_1003.flac','gs://humanparse/humanparse_recording_1004.flac']
+    console.log(inputFileArray, "inputFileArray")
     var apiArray = []
     for (let i = 0; i < inputFileArray.length; i++) {
         apiArray.push(function(callback) {
@@ -92,12 +92,19 @@ function main(inputFileArray, callback) {
         console.log('result:', JSON.stringify(results, null, 2));
         let str = "";
         results.map(result => {
-            str += result.results[0].alternatives[0].transcript + " ";
+            if(result && result.results && result.results.length) {
+                str += result.results[0].alternatives[0].transcript + " ";
+            }
         });
 console.log(str)
         var tags = getMatchingTags(str);
         console.log(tags, 'tags')
-        return tags
+        if(err) {
+            callback(err)
+            return;
+        }
+        callback(null, tags)
+        //return tags
     })
 }
 
@@ -119,6 +126,7 @@ function getTranscript(inputFile, callback) {
                 resource: requestPayload
             }, function(err, result) {
                 if (err) {
+                    console.log("err", err)
                     return cb(err);
                 }
                 //console.log('result:', JSON.stringify(result, null, 2));
@@ -134,16 +142,16 @@ function getTranscript(inputFile, callback) {
 }
 
 // [START run_application]
-if (module === require.main) {
-    console.log(process.argv)
-    if (process.argv.length < 3) {
-        console.log('Usage: node recognize <inputFile>');
-        process.exit();
-    }
-    var inputFile = process.argv[2];
-    main(inputFile, console.log);
-    //main(inputFile, substrMatch)
-}
+// if (module === require.main) {
+//     console.log(process.argv)
+//     if (process.argv.length < 3) {
+//         console.log('Usage: node recognize <inputFile>');
+//         process.exit();
+//     }
+//     var inputFile = process.argv[2];
+//     main(inputFile, console.log);
+//     //main(inputFile, substrMatch)
+// }
 // [END run_application]
 // [END app]
 
@@ -182,4 +190,4 @@ function checkCategory(sample, keywordArray) {
 
 
 
-exports.main = main;
+exports.flacArrayToText = main;

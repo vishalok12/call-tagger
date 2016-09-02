@@ -29,8 +29,8 @@ module.exports = (options, callback) => {
     if (err) {
       return callback(err);
     }
-
-    console.log('Uploaded gs://%s/%s', options.bucket, options.srcFile);
+    let fileName = options.srcFile.slice(options.srcFile.lastIndexOf('/') + 1);
+    console.log('Uploaded gs://%s/%s', options.bucket, fileName);
     return callback(null, file);
   });
 };
