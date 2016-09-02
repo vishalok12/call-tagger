@@ -26,6 +26,11 @@ $(document).ready(function(){
     wavesurfer.on('ready', function () {
         wavesurfer.play();
     });
+
+    $('#waveform').click(function(){
+        wavesurfer.playPause();
+    });
+
     document.getElementById('file1').addEventListener('click', function() {
         genwave()
     });

@@ -1,5 +1,22 @@
 extends layout
 
 block content
-    div.btn-wrap
-        a.btnn.btnn-p(href="/second") Get Started
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+
+    div#content.max1140
+        div.clearfix.feature-list
+            div.col-xs-6.fl1
+                img(alt="" src="/img/feature-list1.png")
+            div.col-xs-6.fl2
+                img(alt="" src="/img/feature-list2.png")
+
+        div.btn-wrap
+            a.bigbtn(href="/second") Show me the magic
+
+
+    script(src="/js/particles.js")
+    script(src="/js/app.js")
+
+
+
