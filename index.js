@@ -20,7 +20,9 @@ module.exports = (config, callback) => {
 		console.log('flacConverter output', outFilePath);
 		if (error) {
 			console.log(error);
-			process.exit(1);
+			//process.exit(1);
+			callback(error);
+			return
 		}
 
 		splitAudio.split({inputFilePath: outFilePath, duration: config.duration}, (error, splitFilesPath) => {
