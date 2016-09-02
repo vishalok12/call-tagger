@@ -53,19 +53,19 @@ function getAuthClient(callback) {
     // [END authenticating]
 
 // [START construct_request]
-function prepareRequest(inputFile, callback) {
+function prepareRequest(inputFile, options, callback) {
         //fs.readFile(inputFile, function (err, audioFile) {
         // if (err) {
         //   return callback(err);
         // }
-        console.log('Got audio file!');
+        console.log('recieved audio file', inputFile);
         //var encoded = new Buffer(audioFile).toString('base64');
         var payload = {
             config: {
                 //encoding: 'LINEAR16',
                 encoding: 'FLAC',
                 sampleRate: 16000,
-                language_code: "hi-IN"
+                language_code: options.langCode || process.env.LANG_CODE
             },
             audio: {
                 //content: encoded,
@@ -78,13 +78,13 @@ function prepareRequest(inputFile, callback) {
     }
     // [END construct_request]
 
-function main(inputFileArray, callback) {
+function main(inputFileArray, options, callback) {
     //var inputFileArray = ['gs://humanparse/humanparse_recording_1002.flac','gs://humanparse/humanparse_recording_1003.flac','gs://humanparse/humanparse_recording_1004.flac']
     console.log(inputFileArray, "inputFileArray")
     var apiArray = []
     for (let i = 0; i < inputFileArray.length; i++) {
         apiArray.push(function(callback) {
-            getTranscript(inputFileArray[i], callback)
+            getTranscript(inputFileArray[i], options, callback)
         })
     }
     async.parallel(apiArray, function(err, results) {
@@ -108,11 +108,11 @@ console.log(str)
     })
 }
 
-function getTranscript(inputFile, callback) {
+function getTranscript(inputFile, options, callback) {
     var requestPayload;
     async.waterfall([
         function(cb) {
-            prepareRequest(inputFile, cb);
+            prepareRequest(inputFile, options, cb);
         },
         function(payload, cb) {
             requestPayload = payload;
@@ -120,7 +120,7 @@ function getTranscript(inputFile, callback) {
         },
         // [START send_request]
         function sendRequest(authClient, cb) {
-            console.log('Analyzing speech...');
+            console.log('analyising speech', inputFile);
             speech.syncrecognize({
                 auth: authClient,
                 resource: requestPayload

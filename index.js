@@ -52,7 +52,7 @@ module.exports = (config, callback) => {
 
 					process.exit(1);
 				}
-				recognize.flacArrayToText(results, callback)
+				recognize.flacArrayToText(results, {langCode: config.langCode} ,callback)
 				// console.log(transcript, 'transcript')
 				// callback(transcript)
 			});

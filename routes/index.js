@@ -29,7 +29,7 @@ router.post('/fileTag', function (req, res) {
 		return res.send(value);
 	}
 
-	getTagForAudio({fileName: key, duration: req.body.duration}, (err, response) => {
+	getTagForAudio({fileName: key, duration: req.body.duration, langCode: req.body.langCode}, (err, response) => {
 		if(err){
 			console.log(err, "err")
 			return res.status(500).send({message: err.message})
