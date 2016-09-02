@@ -103,8 +103,8 @@ console.log(str)
             callback(err)
             return;
         }
-        callback(null, str)
-        //return tags
+        callback(null, {tags, transcript:str})
+        return 
     })
 }
 
@@ -171,8 +171,9 @@ function getMatchingTags(transcript) {
     var categories = Object.keys(categoryMap),
         matches = [];
     for (var i = 0, length = categories.length; i < length; i++) {
-        if (checkCategory(transcript, categoryMap[categories[i]])) {
-            matches.push(categories[i]);
+        if (checkCategory(transcript, categoryMap[categories[i]].keywords)) {
+            matches.push({category:categories[i],
+                description: categories[i].description});
             continue;
         }
     }
