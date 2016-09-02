@@ -21,7 +21,7 @@ var path = require('path');
  * @param {string} options.srcFile The name of the file.
  * @param {function} cb The callback function.
  */
-function uploadFile (options, callback) {
+module.exports = (options, callback) => {
   var bucket = storage.bucket(options.bucket);
 
   // See https://googlecloudplatform.github.io/gcloud-node/#/docs/storage/latest/storage/bucket
@@ -33,9 +33,9 @@ function uploadFile (options, callback) {
     console.log('Uploaded gs://%s/%s', options.bucket, options.srcFile);
     return callback(null, file);
   });
-}
+};
 
-uploadFile({
- bucket: 'vishal-audio-files',
- srcFile: path.join(__dirname, 'test.txt')
-}, () => {});
+// uploadFile({
+//  bucket: 'vishal-audio-files',
+//  srcFile: path.join(__dirname, 'test.txt')
+// }, () => {});
