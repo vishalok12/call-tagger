@@ -23,7 +23,7 @@ module.exports = (config, callback) => {
 			process.exit(1);
 		}
 
-		splitAudio.split({inputFilePath: outFilePath}, (error, splitFilesPath) => {
+		splitAudio.split({inputFilePath: outFilePath, duration: config.duration}, (error, splitFilesPath) => {
 			if (error) {
 				console.log(error);
 

@@ -18,13 +18,18 @@ router.get('/second', function(req, res, next) {
 router.post('/fileTag', function (req, res) {
 	console.log(req.body, "req.body");
 	let key = req.body.fileName;
+
 	let value;
 
-	if (value = cachedResponses.get(key)) {
+	let cache = process.env.CACHE == 'false' ? false : true;
+
+	if (cache && (value = cachedResponses.get(key))) {
+		console.log('returning from cache');
+
 		return res.send(value);
 	}
 
-	getTagForAudio({fileName: key}, (err, response) => {
+	getTagForAudio({fileName: key, duration: req.body.duration}, (err, response) => {
 		if(err){
 			console.log(err, "err")
 			return res.status(500).send({message: err.message})
