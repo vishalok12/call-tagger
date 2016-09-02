@@ -4,10 +4,22 @@
 /*** Company - PROPTIGER.com and MAKAAN.com ***/
 /*** variable ***/
 /*** text colors ***/
+body {
+  position: relative;
+  background-color: #f3f3f3;
+  color: #333;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.2; }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif; }
+  font-family: "comfortaalight", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1; }
 
 .max1140 {
   max-width: 1140px;
@@ -85,14 +97,6 @@ header {
     font-weight: bold;
     color: #e81c28; }
 
-body {
-  position: relative;
-  background-color: #f3f3f3;
-  color: #333;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  line-height: 1.2; }
-
 #content {
   padding: 10px 10px 110px; }
 
@@ -100,11 +104,10 @@ body {
   padding: 30px 0px 0;
   text-align: center; }
   .select-wrap .instruction-txt {
-    font-size: 16px; }
+    font-size: 21px; }
   .select-wrap .dd-wrap {
     position: relative;
     margin: 10px auto;
-    height: 42px;
     width: 260px;
     text-align: left; }
     .select-wrap .dd-wrap .selectbox {
@@ -125,17 +128,20 @@ body {
       .select-wrap .dd-wrap .selectbox .default-txt {
         color: #ccc; }
       .select-wrap .dd-wrap .selectbox i {
+        display: inline-block;
         position: absolute;
         top: 10px;
         right: 10px;
-        color: #ccc; }
+        color: #ccc;
+        transition: transform 0.3s ease-in-out; }
     .select-wrap .dd-wrap .dd {
       display: none;
       position: absolute;
       top: 41px;
       width: 260px;
       max-height: 280px;
-      border: solid 1px #ececec; }
+      border: solid 1px #ececec;
+      z-index: 2; }
       .select-wrap .dd-wrap .dd ul {
         padding: 0;
         margin: 0;
@@ -160,18 +166,24 @@ body {
             color: #fff; }
             .select-wrap .dd-wrap .dd ul > li:hover i {
               color: #fff; }
-    .select-wrap .dd-wrap:hover .dd {
+    .select-wrap .dd-wrap.active .selectbox i {
+      transform: rotate(180deg); }
+    .select-wrap .dd-wrap.active .dd {
       display: block; }
+
+#waveform {
+  padding: 50px 0 0 0; }
 
 .afilelist-wrap .afile-list {
   margin: 0;
   padding: 0;
   list-style: none; }
   .afilelist-wrap .afile-list > li {
+    margin: 30px 0 0 0;
     display: block; }
   .afilelist-wrap .afile-list .sample-name {
     padding: 10px 0;
-    font-size: 14px; }
+    font-size: 18px; }
 .afilelist-wrap .tag-list {
   margin: 0;
   padding: 0;

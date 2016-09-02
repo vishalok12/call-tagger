@@ -5,6 +5,9 @@
 
 @import "ellipsis";
 
+$heading: "comfortaalight", Arial, Helvetica, sans-serif;
+$bodyfont: "Open Sans", Arial, Helvetica, sans-serif;
+
 /*** variable ***/
 $link-color: #e81c28;
 $link-color2: #fba510;
@@ -17,10 +20,24 @@ $notdark-color: #555;
 $light-color: #666;
 $lighter-color: #999999;
 
+body {
+    position: relative;
+    background-color: #f3f3f3;
+    color: #333;
+    font-family: $bodyfont;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+// H tags basics
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: $heading;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
 }
 
 .max1140 {
@@ -125,15 +142,6 @@ header {
     }
 }
 
-body {
-    position: relative;
-    background-color: #f3f3f3;
-    color: #333;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 1.2;
-}
-
 #content {
     padding: 10px 10px 110px;
 }
@@ -143,7 +151,7 @@ body {
     text-align: center;
 
     .instruction-txt {
-        font-size: 16px;
+        font-size: 21px;
     }
 
     .dd-wrap {
@@ -152,7 +160,6 @@ body {
 
         position: relative;
         margin: 10px auto;
-        height: 42px;
         width: $ddwidth;
         text-align: left;
 
@@ -174,10 +181,12 @@ body {
             }
 
             i {
+                display: inline-block;
                 position: absolute;
                 top: 10px;
                 right: 10px;
                 color: #ccc;
+                transition: transform 0.3s ease-in-out;
             }
         }
 
@@ -188,6 +197,7 @@ body {
             width: $ddwidth;
             max-height: 280px;
             border: solid 1px #ececec;
+            z-index: 2;
 
             ul {
                 padding: 0;
@@ -224,13 +234,21 @@ body {
             }
         }
 
-        &:hover {
+        &.active {
+            .selectbox {
+                i {
+                    transform: rotate(180deg);
+                }
+            }
             .dd {
                 display: block;
             }
         }
-
     }
+}
+
+#waveform {
+    padding: 50px 0 0 0;
 }
 
 .afilelist-wrap {
@@ -241,12 +259,13 @@ body {
         list-style: none;
 
         > li {
+            margin: 30px 0 0 0;
             display: block;
         }
 
         .sample-name {
             padding: 10px 0;
-            font-size: 14px;
+            font-size: 18px;
         }
     }
 

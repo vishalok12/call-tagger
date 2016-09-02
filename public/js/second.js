@@ -1,4 +1,18 @@
 $(document).ready(function(){
+    // for dropdown
+    $(".selectbox").click(function() {
+        $(".dd-wrap").addClass('active');
+    });
+
+    $('html').click(function() {
+        $(".dd-wrap").removeClass('active');
+    });
+
+    $('.dd-wrap').click(function(event){
+        event.stopPropagation();
+    });
+
+
     var wavesurfer = WaveSurfer.create({
         container: '#waveform',
         waveColor: 'violet',
