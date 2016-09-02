@@ -4,6 +4,7 @@
   "private": true,
   "author": "Vishal Kumar<vishal.kumar@proptiger.com>, Nishtha Gupta <nishtha.gupta@proptiger.com>, Nimit Mangal <nimit.mangal@proptiger.com>",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "mocha -R spec -t 120000 --require intelli-espower-loader ../test/_setup.js test/*.test.js",
     "system-test": "mocha -R spec -t 120000 --require intelli-espower-loader ../system-test/_setup.js system-test/*.test.js"
   },

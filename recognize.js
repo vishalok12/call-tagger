@@ -103,7 +103,7 @@ console.log(str)
             callback(err)
             return;
         }
-        callback(null, tags)
+        callback(null, str)
         //return tags
     })
 }
