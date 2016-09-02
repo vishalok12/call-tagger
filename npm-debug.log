@@ -1,5 +1,7 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
+1 verbose cli [ '/home/vishal/.nvm/v5.6.0/bin/node',
+1 verbose cli   '/home/vishal/.nvm/v5.6.0/bin/npm',
+1 verbose cli   'start' ]
 2 info using npm@3.6.0
 3 info using node@v5.6.0
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
@@ -7,25 +9,25 @@
 6 silly lifecycle nodejs-docs-samples-storage@0.0.1~prestart: no script for prestart, continuing
 7 info lifecycle nodejs-docs-samples-storage@0.0.1~start: nodejs-docs-samples-storage@0.0.1
 8 verbose lifecycle nodejs-docs-samples-storage@0.0.1~start: unsafe-perm in lifecycle true
-9 verbose lifecycle nodejs-docs-samples-storage@0.0.1~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/nishtha/Work/call-tagger/node_modules/.bin:/usr/local/mysql/bin:/Applications/Sublime Text .app/Contents/SharedSupport/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/nishtha/apache-maven-3.2.2/bin
-10 verbose lifecycle nodejs-docs-samples-storage@0.0.1~start: CWD: /Users/nishtha/Work/call-tagger
+9 verbose lifecycle nodejs-docs-samples-storage@0.0.1~start: PATH: /home/vishal/.nvm/v5.6.0/lib/node_modules/npm/bin/node-gyp-bin:/home/vishal/work/call-tagger/node_modules/.bin:/usr/local/heroku/bin:/usr/local/android-studio/bin/:/home/vishal/.nvm/v5.6.0/bin:/home/vishal/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+10 verbose lifecycle nodejs-docs-samples-storage@0.0.1~start: CWD: /home/vishal/work/call-tagger
 11 silly lifecycle nodejs-docs-samples-storage@0.0.1~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle nodejs-docs-samples-storage@0.0.1~start: Returned: code: 1  signal: null
 13 info lifecycle nodejs-docs-samples-storage@0.0.1~start: Failed to exec start script
 14 verbose stack Error: nodejs-docs-samples-storage@0.0.1 start: `node ./bin/www`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:232:16)
+14 verbose stack     at EventEmitter.<anonymous> (/home/vishal/.nvm/v5.6.0/lib/node_modules/npm/lib/utils/lifecycle.js:232:16)
 14 verbose stack     at emitTwo (events.js:100:13)
 14 verbose stack     at EventEmitter.emit (events.js:185:7)
-14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at ChildProcess.<anonymous> (/home/vishal/.nvm/v5.6.0/lib/node_modules/npm/lib/utils/spawn.js:24:14)
 14 verbose stack     at emitTwo (events.js:100:13)
 14 verbose stack     at ChildProcess.emit (events.js:185:7)
 14 verbose stack     at maybeClose (internal/child_process.js:827:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 15 verbose pkgid nodejs-docs-samples-storage@0.0.1
-16 verbose cwd /Users/nishtha/Work/call-tagger
-17 error Darwin 14.5.0
-18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
+16 verbose cwd /home/vishal/work/call-tagger
+17 error Linux 3.19.0-64-generic
+18 error argv "/home/vishal/.nvm/v5.6.0/bin/node" "/home/vishal/.nvm/v5.6.0/bin/npm" "start"
 19 error node v5.6.0
 20 error npm  v3.6.0
 21 error code ELIFECYCLE
