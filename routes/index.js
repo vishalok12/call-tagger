@@ -30,7 +30,9 @@ router.get('/sounds', function(req, res) {
 		if (error) {
 			return res.status(500).send({message: error.message});
 		}
-		inputFiles = files.map(file => file.slice(file.lastIndexOf('/') + 1));
+		inputFiles = files
+			.filter(file => file.indexOf('m4a', 'mp3', 'flac') > -1)
+			.map(file => file.slice(file.lastIndexOf('/') + 1));
 
 		return res.send(inputFiles);
 	});
