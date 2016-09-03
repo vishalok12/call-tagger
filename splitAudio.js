@@ -26,8 +26,7 @@ module.exports.split = (opt, cb) => {
 
 
 			let audioExtension = opt.inputFilePath.split('.')[1];
-			let cmd = `ffmpeg -i ${options.inputFilePath} -f segment -segment_time ${duration} -c copy splitOut/out%03d.${audioExtension}`;
-
+			let cmd = `ffmpeg -i ${options.inputFilePath} -f segment -segment_time ${duration} -y -c copy splitOut/out%03d.${audioExtension}`;
 			console.log('split', options);
 
 			exec(cmd, function(error, stdout, stderr) {
