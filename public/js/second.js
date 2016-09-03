@@ -54,10 +54,10 @@
 
             let t = Date.now();
             $.post('/fileTag', postData).then(function(output) {
-                if (Date.now() - t < 1000) {
+                if (Date.now() - t < 10000) {
                     return setTimeout(() => {
                         showTags(output.tags);
-                    }, 2000);
+                    }, 10000 - (Date.now() - t));
                 }
                 // show active tags
                 showTags(output.tags);
