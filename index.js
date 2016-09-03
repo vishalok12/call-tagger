@@ -13,7 +13,9 @@ const recognize = require('./recognize');
 const BUCKET = process.env.BUCKET;
 
 module.exports = (config, callback) => {
-	console.log(config, "inputFilePath")
+	if (!config.fileName) {
+		return callback(new Error('Input File missing'));
+	}
 	let inputFilePath = path.join(__dirname, config.fileName);
 	
 	flacConverter.convertToFlac({inputFilePath}, (error, outFilePath) => {
