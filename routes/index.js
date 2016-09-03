@@ -31,7 +31,7 @@ router.get('/sounds', function(req, res) {
 			return res.status(500).send({message: error.message});
 		}
 		inputFiles = files
-			.filter(file => file.indexOf('m4a', 'mp3', 'flac') > -1)
+			.filter(file => (file.indexOf('m4a')>-1||file.indexOf('mp3')>-1||file.indexOf('flac') > -1))
 			.map(file => file.slice(file.lastIndexOf('/') + 1));
 
 		return res.send(inputFiles);
