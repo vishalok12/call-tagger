@@ -43,6 +43,51 @@ h1,h2,h3,h4,h5,h6 {
     line-height: 1;
 }
 
+/* scale ANIMATION CLASS STARTSS */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.035);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+// @function spring-wobbly($t) {
+//     @return  -0.5 * (2.71828 ** (-6 * $t)) * (-2 * (2.71828 ** (6 * $t)) + sin(12 * $t) + 2 * cos(12 * $t));
+// }
+
+// @keyframes wobble {
+//     @for $i from 0 through 100 {
+//         #{$i}% {
+//            transform: scale(spring-wobbly($i) / 30, spring-wobbly($i) / 20);
+//         }
+//     }
+    
+//     0% {
+//         opacity: 1;
+//     }
+//     50% {
+//         opacity: 1;
+//     }
+//     90% {
+//         opacity: 0;
+//     }
+//     100% {
+//         opacity: 0;
+//     } 
+// }
+/* SCALE ANIMATION CLASS ENDSSS */
+
 .max1140 {
     max-width: 1140px;
     margin: 0 auto;
@@ -336,7 +381,7 @@ header {
     .loader2 {
         position: relative;
         width: 55px;
-        margin: 0 auto;
+        margin: 100px auto;
 
         span {
             position: absolute;
@@ -624,6 +669,7 @@ header {
 
             &.active {
                 color: $icon-color;
+                animation: pulse 1s 2 linear;
 
                 &:after {
                     display: block;

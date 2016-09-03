@@ -22,6 +22,19 @@ h1, h2, h3, h4, h5, h6 {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1; }
 
+/* scale ANIMATION CLASS STARTSS */
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  25% {
+    transform: scale(0.9); }
+  50% {
+    transform: scale(1.035); }
+  75% {
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
+/* SCALE ANIMATION CLASS ENDSSS */
 .max1140 {
   max-width: 1140px;
   margin: 0 auto; }
@@ -256,7 +269,7 @@ header {
   .afilelist-wrap .loader2 {
     position: relative;
     width: 55px;
-    margin: 0 auto; }
+    margin: 100px auto; }
     .afilelist-wrap .loader2 span {
       position: absolute;
       bottom: 0px;
@@ -391,7 +404,8 @@ header {
       .afilelist-wrap .tag-list .tag.token.active i {
         background-image: url(/img/tags/token-active.png); }
       .afilelist-wrap .tag-list .tag.active {
-        color: #1bd298; }
+        color: #1bd298;
+        animation: pulse 1s 2 linear; }
         .afilelist-wrap .tag-list .tag.active:after {
           display: block; }
 
