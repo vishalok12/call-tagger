@@ -6,7 +6,7 @@
 
         // for dropdown
         $(".selectbox").click(function() {
-            $(".dd-wrap").addClass('active');
+            $(".dd-wrap").toggleClass('active');
         });
 
         // $('html').click(function() {
