@@ -22,6 +22,19 @@ h1, h2, h3, h4, h5, h6 {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1; }
 
+/* scale ANIMATION CLASS STARTSS */
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  25% {
+    transform: scale(0.9); }
+  50% {
+    transform: scale(1.035); }
+  75% {
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
+/* SCALE ANIMATION CLASS ENDSSS */
 .max1140 {
   max-width: 1140px;
   margin: 0 auto; }
@@ -231,6 +244,52 @@ header {
 
 .afilelist-wrap {
   padding: 0 0 100px 0; }
+  .afilelist-wrap .loader {
+    padding: 50px;
+    text-align: center;
+    color: #ccc;
+    font-size: 64px; }
+@keyframes loader2 {
+  0% {
+    height: 5px;
+    transform: translateY(0px);
+    background: #fb913b; }
+  25% {
+    height: 30px;
+    transform: translateY(15px);
+    background: #f5452e; }
+  50% {
+    height: 5px;
+    transform: translateY(0px);
+    background: #f20088; }
+  100% {
+    height: 5px;
+    transform: translateY(0px);
+    background: #93288a; } }
+  .afilelist-wrap .loader2 {
+    position: relative;
+    width: 55px;
+    margin: 100px auto; }
+    .afilelist-wrap .loader2 span {
+      position: absolute;
+      bottom: 0px;
+      display: block;
+      width: 9px;
+      height: 5px;
+      background: #9b59b6;
+      animation: loader2 1.5s  infinite ease-in-out; }
+      .afilelist-wrap .loader2 span:nth-child(2) {
+        left: 11px;
+        animation-delay: .2s; }
+      .afilelist-wrap .loader2 span:nth-child(3) {
+        left: 22px;
+        animation-delay: .4s; }
+      .afilelist-wrap .loader2 span:nth-child(4) {
+        left: 33px;
+        animation-delay: .6s; }
+      .afilelist-wrap .loader2 span:nth-child(5) {
+        left: 44px;
+        animation-delay: .8s; }
   .afilelist-wrap .afile-list {
     margin: 0;
     padding: 0;
@@ -239,7 +298,7 @@ header {
       margin: 50px 0 0 0;
       display: block; }
     .afilelist-wrap .afile-list .sample-name {
-      padding: 10px 0;
+      padding: 10px 0 20px;
       font-size: 18px; }
   .afilelist-wrap .tag-list {
     margin: 0;
@@ -345,7 +404,8 @@ header {
       .afilelist-wrap .tag-list .tag.token.active i {
         background-image: url(/img/tags/token-active.png); }
       .afilelist-wrap .tag-list .tag.active {
-        color: #1bd298; }
+        color: #1bd298;
+        animation: pulse 1s 2 linear; }
         .afilelist-wrap .tag-list .tag.active:after {
           display: block; }
 

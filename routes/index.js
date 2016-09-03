@@ -5,7 +5,8 @@ const express = require('express'),
 	getTagForAudio = require('../index'),
 	cachedResponses = require('../cachedResponses'),
 	dir = require('node-dir'),
-	path = require('path');
+	path = require('path'),
+	categoryMap = require('../categoryMap');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,7 +15,10 @@ router.get('/', function(req, res, next) {
 
 /* GET second page. */
 router.get('/second', function(req, res, next) {
-  res.render('second', { title: 'Call Tagger - PROPTIGER HACKATHON 2016 - THE GAME OF HACKS' });
+  res.render('second', {
+  	title: 'Call Tagger - PROPTIGER HACKATHON 2016 - THE GAME OF HACKS',
+  	categories: Object.keys(categoryMap)
+  });
 });
 
 let inputFiles;
