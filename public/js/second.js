@@ -39,8 +39,7 @@
         });
 
         $('#sound-list').on('click', '.file', function(e) {
-            let sound = $(e.target).data('value');
-
+            let sound = $(e.currentTarget).data('value');
             genwave(sound);
 
             $('.sample-name').text(sound + ' keywords:')

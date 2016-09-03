@@ -12,7 +12,7 @@ var categoryMap = {
         description: "dummy desc1"
     },
     'Site Visit': {
-        keywords: ['सुबह', "आता हूं", "साइट विज़िट", "साइट विजिट", "साइट विज़िट", "दिखा", "देख", "दिखने", "दिखाने", "मिल", "मिलकर", "आ जाइये", "आइये ना"],
+        keywords: ['सुबह', "आता हूं", "साइट विज़िट", "साइट विजिट", "साइट विज़िट", "दिखा", "देख", "दिखने", "दिखाने", "मिलकर", "आ जाइये", "आइये ना"],
         description: "dummy desc1"
     },
     'Property Requirements - Location': {
@@ -24,7 +24,7 @@ var categoryMap = {
         description: "dummy desc1"
     },
     'Property Requirements - Possession': {
-        keywords: ['बजट', "बजट", "साइट विज़िट"],
+        keywords: [],
         description: "dummy desc1"
     },
     'Phone Number Exchange': {
@@ -43,7 +43,7 @@ var categoryMap = {
         keywords: ["सोल्ड आउट", "बिक"],
         description: "dummy desc1"
     },
-    'Reference to a Listing': {
+    'Reference to Makaan Platform': {
     	keywords: ["ऐड", "अद्वेर्तिसेमेंट", ".com", "makaan.com", "प्रोफाइल", "वेबसाइट", "लिस्टिंग", "डॉट कॉम", "मकान"],
     	description: "dummy desc1"
     },
