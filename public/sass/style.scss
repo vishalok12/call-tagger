@@ -318,6 +318,57 @@ header {
 
 .afilelist-wrap {
     padding: 0 0 100px 0;
+
+    .loader {
+        padding: 50px;
+        text-align: center;
+        color: #ccc;
+        font-size: 64px;
+    }
+
+    @keyframes loader2 {
+        0% { height: 5px; transform: translateY(0px); background: #fb913b; }
+        25% { height: 30px; transform: translateY(15px); background: #f5452e; }
+        50% { height: 5px; transform: translateY(0px); background: #f20088; }
+        100% { height: 5px; transform: translateY(0px); background: #93288a; }
+    }
+
+    .loader2 {
+        position: relative;
+        width: 55px;
+        margin: 0 auto;
+
+        span {
+            position: absolute;
+            bottom: 0px;
+            display: block;
+            width: 9px;
+            height: 5px;
+            background: #9b59b6;
+            animation: loader2 1.5s  infinite ease-in-out;
+
+            &:nth-child(2) {
+                left: 11px;
+                animation-delay: .2s;
+            }
+
+            &:nth-child(3) {
+                left: 22px;
+                animation-delay: .4s;
+            }
+
+            &:nth-child(4) {
+                left: 33px;
+                animation-delay: .6s;
+            }
+
+            &:nth-child(5) {
+                left: 44px;
+                animation-delay: .8s;
+            }
+        }
+    }
+
     .afile-list {
         margin: 0;
         padding: 0;
@@ -329,7 +380,7 @@ header {
         }
 
         .sample-name {
-            padding: 10px 0;
+            padding: 10px 0 20px;
             font-size: 18px;
         }
     }
