@@ -45,6 +45,9 @@
 
             $('.sample-name').text(sound + ' keywords:')
             $('.afile-list > li').addClass('hide');
+            $('.loader2').removeClass('hide');
+            $('.selected-txt').text(sound).removeClass('hide');
+            $('.default-txt').addClass('hide');
 
             let postData =  {
                "fileName": '/input/' + sound
@@ -76,11 +79,14 @@
 
     function showTags(tags) {
         $('.tag').removeClass('active');
-
-        tags.map(tag => {
-            $('.tag[data-value="' + tag.category + '"]').addClass('active');
-        });
+        $('.loader2').addClass('hide');
 
         $('.afile-list > li').removeClass('hide');
+
+        setTimeout(() => {
+            tags.map(tag => {
+                $('.tag[data-value="' + tag.category + '"]').addClass('active');
+            });
+        }, 0);
     }
 })();
