@@ -52,7 +52,13 @@
                "fileName": '/input/' + sound
             };
 
+            let t = Date.now();
             $.post('/fileTag', postData).then(function(output) {
+                if (Date.now() - t < 1000) {
+                    return setTimeout(() => {
+                        showTags(output.tags);
+                    }, 2000);
+                }
                 // show active tags
                 showTags(output.tags);
             }, function(e) {

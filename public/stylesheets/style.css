@@ -567,6 +567,7 @@ header {
   margin: 0 auto;
 }
 .logo-wrap .logo {
+  margin-top: 0;
   display: block;
   width: 100%;
   height: 140px;
@@ -925,7 +926,7 @@ header {
 }
 .afilelist-wrap .tag-list .tag.active {
   color: #1bd298;
-  animation: 5s wobble linear infinite;
+  animation: 5s wobble linear;
 }
 .afilelist-wrap .tag-list .tag.active:after {
   display: block;
