@@ -127,7 +127,8 @@ function getTranscript(inputFile, options, callback) {
             }, function(err, result) {
                 if (err) {
                     console.log("err", err)
-                    return cb(err);
+                    //return cb(err);
+                    return cb(null, {})
                 }
                 //console.log('result:', JSON.stringify(result, null, 2));
                 // var tr = result.results[0].alternatives[0].transcript;
@@ -173,7 +174,7 @@ function getMatchingTags(transcript) {
     for (var i = 0, length = categories.length; i < length; i++) {
         if (checkCategory(transcript, categoryMap[categories[i]].keywords)) {
             matches.push({category:categories[i],
-                description: categories[i].description});
+                description: categoryMap[categories[i]].description});
             continue;
         }
     }
