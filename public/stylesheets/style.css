@@ -582,6 +582,7 @@ header {
   100% {
     height: 5px;
     transform: translateY(0px);
+<<<<<<< HEAD
     background: #93288a; } }
   .afilelist-wrap .loader2 {
     position: relative;
@@ -725,6 +726,201 @@ header {
         animation: 5s wobble linear infinite; }
         .afilelist-wrap .tag-list .tag.active:after {
           display: block; }
+=======
+    background: #93288a;
+  }
+}
+.afilelist-wrap .loader2 {
+  position: relative;
+  width: 55px;
+  margin: 100px auto;
+}
+.afilelist-wrap .loader2 span {
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  width: 9px;
+  height: 5px;
+  background: #9b59b6;
+  animation: loader2 1.5s  infinite ease-in-out;
+}
+.afilelist-wrap .loader2 span:nth-child(2) {
+  left: 11px;
+  animation-delay: .2s;
+}
+.afilelist-wrap .loader2 span:nth-child(3) {
+  left: 22px;
+  animation-delay: .4s;
+}
+.afilelist-wrap .loader2 span:nth-child(4) {
+  left: 33px;
+  animation-delay: .6s;
+}
+.afilelist-wrap .loader2 span:nth-child(5) {
+  left: 44px;
+  animation-delay: .8s;
+}
+.afilelist-wrap .afile-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.afilelist-wrap .afile-list > li {
+  margin: 50px 0 0 0;
+  display: block;
+}
+.afilelist-wrap .afile-list .sample-name {
+  padding: 10px 0 20px;
+  font-size: 18px;
+}
+.afilelist-wrap .tag-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.afilelist-wrap .tag-list > li {
+  display: inline-block;
+  margin: 0 30px 30px 0;
+}
+.afilelist-wrap .tag-list > li:last-child {
+  margin-right: 0px;
+}
+.afilelist-wrap .tag-list .tag {
+  position: relative;
+  height: 120px;
+  padding: 15px 10px 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: #999999;
+  font-size: 14px;
+}
+.afilelist-wrap .tag-list .tag i {
+  display: block;
+  width: auto;
+  height: 50px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.afilelist-wrap .tag-list .tag .txt {
+  line-height: 1.25;
+}
+.afilelist-wrap .tag-list .tag:after {
+  display: none;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  content: '';
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url(/img/tags/tick.png);
+  background-color: #1bd298;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+.afilelist-wrap .tag-list .tag.unit-size i {
+  background-image: url(/img/tags/unit-size.png);
+}
+.afilelist-wrap .tag-list .tag.unit-size.active i {
+  background-image: url(/img/tags/unit-size-active.png);
+}
+.afilelist-wrap .tag-list .tag.budget i {
+  background-image: url(/img/tags/budget.png);
+}
+.afilelist-wrap .tag-list .tag.budget.active i {
+  background-image: url(/img/tags/budget-active.png);
+}
+.afilelist-wrap .tag-list .tag.location i {
+  background-image: url(/img/tags/location.png);
+}
+.afilelist-wrap .tag-list .tag.location.active i {
+  background-image: url(/img/tags/location-active.png);
+}
+.afilelist-wrap .tag-list .tag.furnishing i {
+  background-image: url(/img/tags/furnishing.png);
+}
+.afilelist-wrap .tag-list .tag.furnishing.active i {
+  background-image: url(/img/tags/furnishing-active.png);
+}
+.afilelist-wrap .tag-list .tag.possession i {
+  background-image: url(/img/tags/possession.png);
+}
+.afilelist-wrap .tag-list .tag.possession.active i {
+  background-image: url(/img/tags/possession-active.png);
+}
+.afilelist-wrap .tag-list .tag.sale-type i {
+  background-image: url(/img/tags/sale-type.png);
+}
+.afilelist-wrap .tag-list .tag.sale-type.active i {
+  background-image: url(/img/tags/sale-type-active.png);
+}
+.afilelist-wrap .tag-list .tag.parking i {
+  background-image: url(/img/tags/parking.png);
+}
+.afilelist-wrap .tag-list .tag.parking.active i {
+  background-image: url(/img/tags/parking-active.png);
+}
+.afilelist-wrap .tag-list .tag.home-loan i {
+  background-image: url(/img/tags/bank-loan.png);
+}
+.afilelist-wrap .tag-list .tag.home-loan.active i {
+  background-image: url(/img/tags/bank-loan-active.png);
+}
+.afilelist-wrap .tag-list .tag.site-visit i {
+  background-image: url(/img/tags/site-visit.png);
+}
+.afilelist-wrap .tag-list .tag.site-visit.active i {
+  background-image: url(/img/tags/site-visit-active.png);
+}
+.afilelist-wrap .tag-list .tag.number-change i {
+  background-image: url(/img/tags/number-exchange.png);
+}
+.afilelist-wrap .tag-list .tag.number-change.active i {
+  background-image: url(/img/tags/number-exchange-active.png);
+}
+.afilelist-wrap .tag-list .tag.call-back i {
+  background-image: url(/img/tags/call-back.png);
+}
+.afilelist-wrap .tag-list .tag.call-back.active i {
+  background-image: url(/img/tags/call-back-active.png);
+}
+.afilelist-wrap .tag-list .tag.commission i {
+  background-image: url(/img/tags/commission.png);
+}
+.afilelist-wrap .tag-list .tag.commission.active i {
+  background-image: url(/img/tags/commission-active.png);
+}
+.afilelist-wrap .tag-list .tag.not-available i {
+  background-image: url(/img/tags/not-available.png);
+}
+.afilelist-wrap .tag-list .tag.not-available.active i {
+  background-image: url(/img/tags/not-available-active.png);
+}
+.afilelist-wrap .tag-list .tag.reference i {
+  background-image: url(/img/tags/reference.png);
+}
+.afilelist-wrap .tag-list .tag.reference.active i {
+  background-image: url(/img/tags/reference-active.png);
+}
+.afilelist-wrap .tag-list .tag.token i {
+  background-image: url(/img/tags/token.png);
+}
+.afilelist-wrap .tag-list .tag.token.active i {
+  background-image: url(/img/tags/token-active.png);
+}
+.afilelist-wrap .tag-list .tag.active {
+  color: #1bd298;
+  animation: 5s wobble linear;
+}
+.afilelist-wrap .tag-list .tag.active:after {
+  display: block;
+}
+>>>>>>> 57642593bff7ed2ac9c26ac1d5671e342c5eea6f
 
 .btn-wrap {
   padding: 20px 10px 100px;
