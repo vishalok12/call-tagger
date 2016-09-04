@@ -11,7 +11,7 @@ var categoryMap = {
         keywords: ['hdfc', "होम लोन", "sbi", "बैंकों", "बैंक", "डॉक्यूमेंट", "लोन"],
         description: "dummy desc1"
     },
-    'Push for Site Visit': {
+    'Site Visit': {
         keywords: ['सुबह', "आता हूं", "साइट विज़िट", "साइट विजिट", "साइट विज़िट", "दिखा", "देख ", "देखते", "दिखाने", "मिलकर", "आ जाइये", "आइये ना", "आप आइए"],
         description: "dummy desc1"
     },
@@ -36,7 +36,7 @@ var categoryMap = {
         description: "dummy desc1"
     },
     'Ask for a Call Back': {
-        keywords: ["कॉल करता"],
+        keywords: ["कल कॉल"],
         description: "dummy desc1"
     },
     'Property Not Available': {
