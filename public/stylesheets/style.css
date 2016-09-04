@@ -447,18 +447,6 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
   }
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 /* SCALE ANIMATION CLASS ENDSSS */
 .max1140 {
