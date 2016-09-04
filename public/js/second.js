@@ -1,5 +1,11 @@
 (function() {
+    var timeoutArray = []
     $(document).ready(function(){
+        let soundWaveLoaded = false;
+        let t;
+        let tagLoaded = false;
+        let outPutTags;
+
         $.get('/sounds').then(function(sounds) {
             fillDropdown(sounds);
         });
@@ -23,15 +29,23 @@
             waveColor: 'violet',
             progressColor: 'purple'
         });
-        
+
         function genwave(file) {
             $(".dd-wrap").removeClass('active');
 
+            soundWaveLoaded = false;
             wavesurfer.load('/' + file);
         }
 
         wavesurfer.on('ready', function () {
+            soundWaveLoaded = true;
+            t = Date.now();
+
             wavesurfer.play();
+
+            if (tagLoaded) {
+                showTags(outPutTags, 0);
+            }
         });
 
         $('#waveform').click(function(){
@@ -40,6 +54,9 @@
 
         $('#sound-list').on('click', '.file', function(e) {
             let sound = $(e.currentTarget).data('value');
+
+            tagLoaded = false;
+
             genwave(sound);
 
             $('.sample-name').text(sound + ' context:')
@@ -54,7 +71,6 @@
                "fileName": '/input/' + sound
             };
 
-            let t = Date.now();
             $.post('/fileTag', postData).then(function(output) {
                 // if (Date.now() - t < 10000) {
                 //     return setTimeout(() => {
@@ -62,7 +78,13 @@
                 //     }, 10000 - (Date.now() - t));
                 // }
                 // show active tags
-                showTags(output.tags, Date.now() - t);
+
+                tagLoaded = true;
+                outPutTags = output.tags;
+
+                if (soundWaveLoaded) {
+                    showTags(outPutTags, Date.now() - t);
+                }
             }, function(e) {
                 console.log(e);
             });
@@ -85,6 +107,9 @@
     }
 
     function showTags(tags, timeDiff) {
+        for(let i=0, length=timeoutArray.length;i<length;i++){
+            window.clearTimeout(timeoutArray[i])
+        }
         // $('.loader2').addClass('hide');
 
         // $('.afile-list > li').removeClass('hide');
@@ -92,15 +117,15 @@
         // setTimeout(() => {
             tags.map(tag => {
                 if (tag.time) {
-                    setTimeout(() => {
+                    timeoutArray.push(setTimeout(() => {
                         $('.tag[data-value="' + tag.category + '"]')
                             .addClass('active');
-                    }, tag.time - timeDiff);
+                    }, tag.time - timeDiff));
                 } else {
                     $('.tag[data-value="' + tag.category + '"]')
                         .addClass('active');
                 }
-                
+
             });
         // }, 0);
     }
