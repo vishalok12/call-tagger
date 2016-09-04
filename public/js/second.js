@@ -1,4 +1,5 @@
 (function() {
+    var timeoutArray = []
     $(document).ready(function(){
         $.get('/sounds').then(function(sounds) {
             fillDropdown(sounds);
@@ -23,7 +24,7 @@
             waveColor: 'violet',
             progressColor: 'purple'
         });
-        
+
         function genwave(file) {
             $(".dd-wrap").removeClass('active');
 
@@ -85,6 +86,9 @@
     }
 
     function showTags(tags, timeDiff) {
+        for(let i=0, length=timeoutArray.length;i<length;i++){
+            window.clearTimeout(timeoutArray[i])
+        }
         // $('.loader2').addClass('hide');
 
         // $('.afile-list > li').removeClass('hide');
@@ -92,15 +96,15 @@
         // setTimeout(() => {
             tags.map(tag => {
                 if (tag.time) {
-                    setTimeout(() => {
+                    timeoutArray.push(setTimeout(() => {
                         $('.tag[data-value="' + tag.category + '"]')
                             .addClass('active');
-                    }, tag.time - timeDiff);
+                    }, tag.time - timeDiff));
                 } else {
                     $('.tag[data-value="' + tag.category + '"]')
                         .addClass('active');
                 }
-                
+
             });
         // }, 0);
     }
