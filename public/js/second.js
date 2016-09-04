@@ -42,7 +42,7 @@
             let sound = $(e.currentTarget).data('value');
             genwave(sound);
 
-            $('.sample-name').text(sound + ' keywords:')
+            $('.sample-name').text(sound + ' context:')
             // $('.afile-list > li').addClass('hide');
             // $('.loader2').removeClass('hide');
             $('.selected-txt').text(sound).removeClass('hide');
