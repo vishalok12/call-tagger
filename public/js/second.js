@@ -57,6 +57,8 @@
 
             tagLoaded = false;
 
+            clearShowingTags();
+
             genwave(sound);
 
             $('.sample-name').text(sound + ' keywords:')
@@ -106,10 +108,15 @@
         $('#sound-list').append($lists);
     }
 
-    function showTags(tags, timeDiff) {
+    function clearShowingTags() {
         for(let i=0, length=timeoutArray.length;i<length;i++){
-            window.clearTimeout(timeoutArray[i])
+            window.clearTimeout(timeoutArray[i]);
         }
+
+        timeoutArray.length = 0;
+    }
+
+    function showTags(tags, timeDiff) {
         // $('.loader2').addClass('hide');
 
         // $('.afile-list > li').removeClass('hide');
