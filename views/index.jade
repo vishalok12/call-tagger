@@ -5,10 +5,50 @@ block content
     <div id="particles-js"></div>
 
     div#content.max1140
-        div.clearfix.feature-list
-            div.col-xs-6.fl1
+
+        article#slider
+
+            input#slide1.forslider(checked="" type="radio" name="slider")
+            input#slide2.forslider(type="radio" name="slider")
+            input#slide3.forslider(type="radio" name="slider")
+            input#slide4.forslider(type="radio" name="slider")
+            input#slide5.forslider(type="radio" name="slider")
+            
+            div#slides
+                div#overflow
+                    div.inner
+                        article
+                            img(src="CouldDragonByBjzaba.png")
+                        article
+                            img(src="MountainFortByBjzaba.png")
+                        article
+                            img(src="CouldDragonByBjzaba.png")
+                        article
+                            img(src="MountainFortByBjzaba.png")
+                        article
+                            img(src="CouldDragonByBjzaba.png")
+
+        
+            div#controls
+                label(for="slide1")
+                label(for="slide2")
+                label(for="slide3")
+                label(for="slide4")
+                label(for="slide5")
+
+            
+            div#active
+                label(for="slide1")
+                label(for="slide2")
+                label(for="slide3")
+                label(for="slide4")
+                label(for="slide5")
+
+
+        //div.clearfix.feature-list
+            div.col-xs-12.col-sm-6.fl1
                 img(alt="" src="/img/feature-list1.png")
-            div.col-xs-6.fl2
+            div.col-xs-12.col-sm-6.fl2
                 img(alt="" src="/img/feature-list2.png")
 
         div.btn-wrap
