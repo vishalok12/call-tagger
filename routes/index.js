@@ -10,13 +10,13 @@ const express = require('express'),
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Call Tagger - PROPTIGER HACKATHON 2016 - THE GAME OF HACKS' });
+  res.render('index', { title: 'Audio Sense - PROPTIGER HACKATHON 2016 - THE GAME OF HACKS' });
 });
 
 /* GET second page. */
 router.get('/second', function(req, res, next) {
   res.render('second', {
-  	title: 'Call Tagger - PROPTIGER HACKATHON 2016 - THE GAME OF HACKS',
+  	title: 'Audio Sense - PROPTIGER HACKATHON 2016 - THE GAME OF HACKS',
   	categories: Object.keys(categoryMap)
   });
 });

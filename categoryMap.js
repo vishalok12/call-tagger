@@ -4,19 +4,19 @@ var categoryMap = {
         description: "dummy desc"
     },
     'Property Requirements - Budget': {
-        keywords: ['बजट'],
+        keywords: ['बजट', "करोड़", "लाख"],
         description: "dummy desc1"
     },
     'Home Loan': {
         keywords: ['hdfc', "होम लोन", "sbi", "बैंकों", "बैंक", "डॉक्यूमेंट", "लोन"],
         description: "dummy desc1"
     },
-    'Site Visit': {
-        keywords: ['सुबह', "आता हूं", "साइट विज़िट", "साइट विजिट", "साइट विज़िट", "दिखा", "देख ", "देखते", "दिखाने", "मिलकर", "आ जाइये", "आइये ना"],
+    'Push for Site Visit': {
+        keywords: ['सुबह', "आता हूं", "साइट विज़िट", "साइट विजिट", "साइट विज़िट", "दिखा", "देख ", "देखते", "दिखाने", "मिलकर", "आ जाइये", "आइये ना", "आप आइए"],
         description: "dummy desc1"
     },
     'Property Requirements - Location': {
-        keywords: ['सेक्टर', "लोकेशन"],
+        keywords: ['रोड', "लोकेशन"],
         description: "dummy desc1"
     },
     'Property Requirements - Furnishing': {
@@ -36,7 +36,7 @@ var categoryMap = {
         description: "dummy desc1"
     },
     'Ask for a Call Back': {
-        keywords: ["कॉल"],
+        keywords: ["कॉल करता"],
         description: "dummy desc1"
     },
     'Property Not Available': {
@@ -44,22 +44,22 @@ var categoryMap = {
         description: "dummy desc1"
     },
     'Reference to Makaan Platform': {
-    	keywords: ["ऐड", "अद्वेर्तिसेमेंट", ".com", "makaan.com", "प्रोफाइल", "वेबसाइट", "लिस्टिंग", "डॉट कॉम", "मकान"],
-    	description: "dummy desc1"
+        keywords: ["ऐड", "अद्वेर्तिसेमेंट", ".com", "makaan.com", "प्रोफाइल", "वेबसाइट", "लिस्टिंग", "डॉट कॉम", "मकान"],
+        description: "dummy desc1"
     },
     'Transaction - Token Money': {
-    	keywords: ["टोकन"],
-    	description: "dummy desc1"
+        keywords: ["टोकन"],
+        description: "dummy desc1"
     },
     'Property Requirements - Parking': {
-    	keywords: ["पार्किंग"],
-    	description: "dummy desc1"
+        keywords: ["पार्किंग"],
+        description: "dummy desc1"
     },
     'Broker Commission': {
-    	keywords: ["कमीशन", "ब्रोकरेज"],
-    	description: "dummy desc1"
+        keywords: ["कमीशन", "ब्रोकरेज"],
+        description: "dummy desc1"
     }
-    
+
 }
 
 exports.categoryMap = categoryMap;
