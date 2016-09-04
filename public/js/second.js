@@ -43,10 +43,12 @@
             genwave(sound);
 
             $('.sample-name').text(sound + ' keywords:')
-            $('.afile-list > li').addClass('hide');
-            $('.loader2').removeClass('hide');
+            // $('.afile-list > li').addClass('hide');
+            // $('.loader2').removeClass('hide');
             $('.selected-txt').text(sound).removeClass('hide');
             $('.default-txt').addClass('hide');
+
+            $('.tag').removeClass('active');
 
             let postData =  {
                "fileName": '/input/' + sound
@@ -54,13 +56,13 @@
 
             let t = Date.now();
             $.post('/fileTag', postData).then(function(output) {
-                if (Date.now() - t < 10000) {
-                    return setTimeout(() => {
-                        showTags(output.tags);
-                    }, 10000 - (Date.now() - t));
-                }
+                // if (Date.now() - t < 10000) {
+                //     return setTimeout(() => {
+                //         showTags(output.tags);
+                //     }, 10000 - (Date.now() - t));
+                // }
                 // show active tags
-                showTags(output.tags);
+                showTags(output.tags, Date.now() - t);
             }, function(e) {
                 console.log(e);
             });
@@ -82,16 +84,24 @@
         $('#sound-list').append($lists);
     }
 
-    function showTags(tags) {
-        $('.tag').removeClass('active');
-        $('.loader2').addClass('hide');
+    function showTags(tags, timeDiff) {
+        // $('.loader2').addClass('hide');
 
-        $('.afile-list > li').removeClass('hide');
+        // $('.afile-list > li').removeClass('hide');
 
-        setTimeout(() => {
+        // setTimeout(() => {
             tags.map(tag => {
-                $('.tag[data-value="' + tag.category + '"]').addClass('active');
+                if (tag.time) {
+                    setTimeout(() => {
+                        $('.tag[data-value="' + tag.category + '"]')
+                            .addClass('active');
+                    }, tag.time - timeDiff);
+                } else {
+                    $('.tag[data-value="' + tag.category + '"]')
+                        .addClass('active');
+                }
+                
             });
-        }, 0);
+        // }, 0);
     }
 })();
