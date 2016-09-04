@@ -1,5 +1,10 @@
 (function() {
     $(document).ready(function(){
+        let soundWaveLoaded = false;
+        let t;
+        let tagLoaded = false;
+        let outPutTags;
+
         $.get('/sounds').then(function(sounds) {
             fillDropdown(sounds);
         });
@@ -27,11 +32,19 @@
         function genwave(file) {
             $(".dd-wrap").removeClass('active');
 
+            soundWaveLoaded = false;
             wavesurfer.load('/' + file);
         }
 
         wavesurfer.on('ready', function () {
+            soundWaveLoaded = true;
+            t = Date.now();
+
             wavesurfer.play();
+
+            if (tagLoaded) {
+                showTags(outPutTags, 0);
+            }
         });
 
         $('#waveform').click(function(){
@@ -40,6 +53,9 @@
 
         $('#sound-list').on('click', '.file', function(e) {
             let sound = $(e.currentTarget).data('value');
+
+            tagLoaded = false;
+
             genwave(sound);
 
             $('.sample-name').text(sound + ' keywords:')
@@ -54,7 +70,6 @@
                "fileName": '/input/' + sound
             };
 
-            let t = Date.now();
             $.post('/fileTag', postData).then(function(output) {
                 // if (Date.now() - t < 10000) {
                 //     return setTimeout(() => {
@@ -62,7 +77,13 @@
                 //     }, 10000 - (Date.now() - t));
                 // }
                 // show active tags
-                showTags(output.tags, Date.now() - t);
+
+                tagLoaded = true;
+                outPutTags = output.tags;
+
+                if (soundWaveLoaded) {
+                    showTags(outPutTags, Date.now() - t);
+                }
             }, function(e) {
                 console.log(e);
             });
